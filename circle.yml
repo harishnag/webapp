@@ -1,0 +1,16 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+
+  pre:
+    - docker version
+    - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - docker build -t harishnag/nodewebapp:$CIRCLE_SHA1 .
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker push harishnag/nodewebapp:$CIRCLE_SHA1
