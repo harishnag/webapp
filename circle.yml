@@ -14,3 +14,4 @@ deployment:
     branch: master
     commands:
       - docker push harishnag/nodewebapp:$CIRCLE_SHA1
+      
