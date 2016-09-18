@@ -5,17 +5,10 @@ machine:
     APP_NAME: nodewebapp
 
 dependencies:
-  cache_directories:
-    - circle_cache
-    - node_modules
-    - "~/docker"
   pre:
     - docker version
     - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
     - docker build -t harishnag/nodewebapp:$CIRCLE_SHA1 .
-
-    override:
-    - ./build/apply_cached_timestamp circle_cache exporter/package.json 
 
 test:
   override:
