@@ -19,4 +19,5 @@ deployment:
     branch: master
     commands:
       - docker push harishnag/nodewebapp:$CIRCLE_SHA1
+      - sudo chmod +x ./send_to_deploybot_inbox
       - ./send_to_deploybot_inbox $CIRCLE_SHA1
