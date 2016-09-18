@@ -1,0 +1,10 @@
+{
+  "application":{
+      "qa": {
+        "appcluster": "nodewebapp",
+        "appservice": "testharish",
+        "apptaskdefinition": "TrialHarish",
+        "appimage":"harishnag/nodewebapp"
+      }  
+  }
+}

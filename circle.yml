@@ -19,4 +19,4 @@ deployment:
     branch: master
     commands:
       - docker push harishnag/nodewebapp:$CIRCLE_SHA1
-      - ./build/send_to_deploybot_inbox $CIRCLE_SHA1
+      - send_to_deploybot_inbox $CIRCLE_SHA1
