@@ -5,6 +5,14 @@
         "appservice": "testharish",
         "apptaskdefinition": "TrialHarish",
         "appimage":"harishnag/nodewebapp"
+      }, 
+      "production": {
+        "appcluster": "nodewebappwest",
+        "appservice": "testharish",
+        "apptaskdefinition": "TrialHarishwest",
+        "appimage":"harishnag/nodewebapp"
       }  
   }
 }
+
+
