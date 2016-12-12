@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My New Page</title>
+    <script src="js/aws-sdk.min.js"></script>
+    <script src="js/aws-sdk-mobile-analytics.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script>
+          $(document).ready(function(){
+           //This is for original
+
+            // AWS.config.region = 'us-east-1';
+            // AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+            //     IdentityPoolId: 'us-east-1:5aef93e7-5251-461c-ab61-05817629f3ae'//, //Amazon Cognito Identity Pool ID
+            //     //RoleArn:'arn:aws:iam::362122313800:role/jackrabbitaudio_auth_MOBILEHUB_674618524',
+            //     //AccountId: '362122313800' // your AWS account ID
+            // });
+            // var options = {
+            //     appId : '8cef3815a471436a952e78d95cbc0c31' //Amazon Mobile Analytics App ID
+            // };
+            // var mobileAnalyticsClient = new AMA.Manager(options);
+
+            // This is for Harish Test
+            // AWS.config.region = 'us-east-1';
+            // AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+            //     IdentityPoolId: 'us-east-1:bb2a241e-8140-4aa2-90e3-fd6268949763' //Amazon Cognito Identity Pool ID
+            // });
+            // var options = {
+            //     appId : 'c2211a58fab6408b85bb142f51d9e929'//, //Amazon Mobile Analytics App ID
+            //     //appTitle : APP_TITLE,              //Optional e.g. 'Example App'
+            //     //appVersionName : APP_VERSION_NAME, //Optional e.g. '1.4.1'
+            //     //appVersionCode : APP_VERSION_CODE, //Optional e.g. '42'
+            //     //appPackageName : APP_PACKAGE_NAME  //Optional e.g. 'com.amazon.example'
+            // };
+            // var mobileAnalyticsClient = new AMA.Manager(options);
+            //This is for jraudio the last attempted
+
+            AWS.config.region = 'us-east-1';
+                AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+                    IdentityPoolId: 'us-east-1:bb2a241e-8140-4aa2-90e3-fd6268949763' //Amazon Cognito Identity Pool ID
+                });
+
+                var options = {
+                    appId : '9307a5d9d05d47e9a6807e014945791c'
+                };
+
+            var mobileAnalyticsClient = new AMA.Manager(options);
+
+            try{
+                mobileAnalyticsClient.submitEvents();
+                console.log('Called Submit Events');
+            }
+            catch (ex) {
+                alert(ex.message);
+                    }
+            
+            try{
+              mobileAnalyticsClient.recordEvent('CUSTOM EVENT NAME', {
+                        'ATTRIBUTE_1_NAME': 'ATTRIBUTE_1_VALUE',
+                        'ATTRIBUTE_2_NAME': 'ATTRIBUTE_2_VALUE'
+                        /* ... */
+                        }, {
+                        'METRIC_1_NAME': 1,
+                        'METRIC_2_NAME': 99.3
+                        /* ... */
+                        });
+              console.log('Called Record Event');
+            }
+            catch(ex){
+                 alert(ex.message);
+            }
+          
+
+            //alert('analytics sent');
+          });
+</script>
+</head>
+<body>
+
+
+<label>Hello There</label>
+</body>
+</html>

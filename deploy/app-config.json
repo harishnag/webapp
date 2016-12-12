@@ -4,14 +4,16 @@
         "appcluster": "nodewebapp",
         "appservice": "testharish",
         "apptaskdefinition": "TrialHarish",
-        "appimage":"harishnag/nodewebapp"
+        "appimage":"harishnag/nodewebapp",
+        "configurl":"qaurl"
       }, 
-      "production": {
-        "appcluster": "nodewebappwest",
-        "appservice": "testharish",
-        "apptaskdefinition": "TrialHarishwest",
-        "appimage":"harishnag/nodewebapp"
-      }  
+      "prod": {
+        "appcluster": "nodewebappprod",
+        "appservice": "testharishprodservice",
+        "apptaskdefinition": "testharishprod",
+        "appimage":"harishnag/nodewebapp",
+        "configurl": "someurl"
+        }   
   }
 }
 

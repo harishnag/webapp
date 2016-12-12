@@ -8,6 +8,7 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "aws-sdk": "^2.6.11",
     "express": "^4.13.3"
   }
 }
